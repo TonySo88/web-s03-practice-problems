@@ -19,17 +19,31 @@
     //     }
     //   }
 
-    //ENTER YOUR CODE HERE
-
-
+    const plane = {
+      make: "Boeing",
+      model: 737,
+      holds: 500,
+      odometer: 0,
+      destination: "Phuket, Thailand",
+      fly(miles) {
+        this.odometer += miles;
+        return `${this.holds} passengers have flown ${miles} towards ${this.destination}, putting te plane's odometer at ${this.odometer}`
+      }
+    }
+    console.log(plane.fly(350))
     /*
     PROBLEM 2: Create a person object that includes:
       •A name property with a value of the person's name (e.g. "John")
       •A greet method that logs a message to the console, greeting the person by name. The message should include the person's name (e.g. "Hello, John!").
-
-    //ENTER YOUR CODE HERE
-
-     /*
+    */
+    const person = {
+      name: 'World',
+      greet() {
+        return `Hello, ${this.name}`
+      }
+    }
+    console.log(person.greet())
+    /*
     PROBLEM 3: Create an object named painter and includes:
     •A favorite artist property with a value of "Claude Monet"
     •A medium property with a value of "watercolor"
