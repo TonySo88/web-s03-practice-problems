@@ -13,7 +13,9 @@
                Did the variable change? Why do you think that is?
     */
     //ENTER YOUR CODE HERE
-
+    let str = 'hello'
+    str[0] = 'H'
+    console.log('str:', str) // output: 'hello', because strings are immutable
     /*
     PROBLEM 2: Create a variable named num and set it equal to the number 5
                Next use += to add three to the num variable like this:
@@ -22,7 +24,9 @@
                Did the variable change? Why?
     */
     //ENTER YOUR CODE HERE
-
+    let num = 5;
+    num += 3;
+    console.log('num:', num) // output: 8, because numbers are mutable
      /*
     PROBLEM 3: Here is an object named obj containing a car called a "Honda" and owned by someone named "John".
                On the second line, use the right side of the equal sign to change the owner's name to "Tony"
@@ -31,7 +35,8 @@
     */
     let obj = { owner: "John", car: "Honda" };
     //ENTER YOUR CONSOLE LOG HERE
-
+    obj.owner = "Tony"
+    console.log("obj.owner:", obj) // output: Tony, because objects are mutable
     /*
     PROBLEM 4: Here is an array named arr containing an array of numbers.
                On the second line, inside the parentheses, add the number 4.
@@ -39,17 +44,18 @@
                Did the array change? Why?
     */
     let arr = [1, 2, 3];
-    arr.push();
+    arr.push(4);
    //ENTER YOUR CONSOLE LOG HERE
-
+    console.log('arr.push:', arr) // output: 4, because arrays are mutable 
     /*
     PROBLEM 5 (DEBUGGING): In the following snippet, we want to change the punctuation at the end of the string.
               We're trying to directly modify the string, but like in our first problem, it's not working.
               Fix the code so that the string is changed to "Welcome to Bloomtech!"
     */
-    //               let message = 'Welcome to Bloomtech?';
-    //               message[20] = '!';
-    //               console.log(message);
+                  let message = 'Welcome to Bloomtech?';
+                  // message[20] = '!'; can't use this because strings are immutable
+                  message = 'Welcome to Bloomtech!'
+                  console.log(message);
 
   </script>
 

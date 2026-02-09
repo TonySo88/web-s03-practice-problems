@@ -9,25 +9,67 @@
     PROBLEM 1: Write an arrow function "sayHello" that prints "hello" to the console
     */
     //ENTER YOUR CODE HERE
-
+    // let sayHello = () => console.log("sayHello:", 'hello')
+    // let sayHello = () => {
+    //   console.log("sayHello:", 'hello')
+    // }
+    // let sayHello = function() {
+    //   console.log("sayHello:", 'Hello')
+    // }
+    function sayHello() {
+      console.log("sayHello:", 'Hello')
+    }
+    sayHello()
     /*
     PROBLEM 2: Write an arrow function "echo" that receives a string as an argument and returns it
     */
     //ENTER YOUR CODE HERE
+    // let echo = str => str
+    // let echo = str => {
+    //   return str
+    // }
+    // let echo = function(str){
+    //   return str
+    // }
+    function echo(str){
+      return str
+    }
+    console.log("echo:", echo('hello'))
 
     /*
    PROBLEM 3: Write an arrow function "getSum" that receives two numbers as arguments and returns their sum
    */
     //ENTER YOUR CODE HERE
-
+    // let getSum = (num1, num2) => num1 + num2
+    // let getSum = (num1, num2) => {
+    //   return num1 + num2
+    // }
+    // let getSum = function(num1, num2) {
+    //   return num1 + num2
+    // }
+    function getSum(num1, num2) {
+      return num1 + num2
+    }
+    console.log('getSum', getSum(5, 10))
     /*
     PROBLEM 4: Write an inline arrow function "singSong" that receives a string as an argument and returns '...singing' + song
       e.g singSong('Happy') should return ...singing Happy
     */
     //ENTER YOUR CODE HERE
-
+    // let singSong = str => `...singing ${str}`
+    // let singSong = str => {
+    //   return `...singing ${'Happy'}`
+    // }
+    // let singSong = function(str) {
+    //   return `...singing ${'Happy'}`
+    // }
+    function singSong(str) {
+      return `...singing ${'Happy'}`
+    }
+    console.log("singSong:", singSong('Happy'))
     /*
-    PROBLEM 5 (DEBUGGING): The code below is getting the error "Uncaught ReferenceError: matchAnnouncement is not defined", but it is defined. Fix the code so runs as expected.
+    PROBLEM 5 (DEBUGGING): The code below is getting the error "Uncaught ReferenceError: matchAnnouncement is not defined", 
+    but it is defined. Fix the code so runs as expected.
     */
 
     // const playGame = (player1, player2) => {
@@ -49,6 +91,25 @@
     //     return tails;
     //   }
     // }
+    const matchAnnouncement = (player1, player2) => {
+      return `Welcome! Today, ${player1} faces ${player2}`;
+    }
+
+    const playGame = (player1, player2) => {
+      console.log(matchAnnouncement(player1, player2));
+      const winner = coinFlip(player1, player2);
+      console.log('The winner is... ' + winner);
+    }
+    
+    playGame('Phoebe', 'Rachel');
+    
+    function coinFlip(heads, tails) {
+      if (Math.random() >= 0.5) {
+        return heads;
+      } else {
+        return tails;
+      }
+    }
 
   </script>
 

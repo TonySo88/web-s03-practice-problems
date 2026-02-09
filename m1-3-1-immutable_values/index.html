@@ -13,7 +13,8 @@
     str[0] = 'A'; // operation 1. Did we mutate the string inside str?
     arr[0] = 'A'; // operation 2. Did we mutate the array inside arr?
     // Create your console.logs here:
-
+    console.log("str:", str) // no, strings are immutable
+    console.log("arr", arr) // yes, arrays are mutable
     /*
     PROBLEM 2: Is the following operation incrementing both values? Log out num and copy to find out.
     */
@@ -21,13 +22,16 @@
     let copy = num;
     num++; // is this affecting copy also?
     // Create your console.logs here:
-
+    console.log("num:", num) // yes
+    console.log("copy:", copy) // no
     /*
     PROBLEM 3: Is the following operation changing likesPizza? Log out likesPizza and likesBroccoli to find out.
     */
     let likesPizza = true;
     let likesBroccoli = !likesPizza; // is this changing the value of likesPizza?
     // Create your console.logs here:
+    console.log(likesPizza) // true
+    console.log(likesBroccoli) // false
   </script>
 
 </body>

@@ -18,7 +18,7 @@
     //       return `${plane.holds} passengers have flown ${miles} towards ${plane.destination}, putting the plane's odometer at ${plane.odometer}`;
     //     }
     //   }
-
+    //ENTER YOUR CODE HERE
     const plane = {
       make: "Boeing",
       model: 737,
@@ -36,6 +36,7 @@
       •A name property with a value of the person's name (e.g. "John")
       •A greet method that logs a message to the console, greeting the person by name. The message should include the person's name (e.g. "Hello, John!").
     */
+    //ENTER YOUR CODE HERE
     const person = {
       name: 'World',
       greet() {
@@ -52,7 +53,15 @@
     console.log the paint method to see the changing number of paintings
     */
     //ENTER YOUR CODE HERE
-
+    const painter = {
+      favorite: "Claude Monet",
+      medium: 'watercolor',
+      paintings: 10,
+      paint() {
+        return this.paintings = this.paintings += 1;
+      }
+    }
+    console.log(painter.paint())
     /*
     PROBLEM 4: Create an object named adventurer and includes:
     •A type property with a value of Wizard
@@ -60,9 +69,26 @@
     •A method called heal that adds a number of health points to the character health property if it is less than 100.
     */
     //ENTER YOUR CODE HERE
-
+    const adventurer = {
+      type: "Wizard",
+      health: 90,
+      heal() {
+        // this.health = Math.min(100, this.health + 1)
+        if (this.health < 100) {
+          this.health += 1;
+          return `${this.type} has ${this.health} HP remaining!`
+        }
+        else if (this.health >= 100) {
+          this.health = 100;
+          return `${this.type} has 100 HP remaining!`
+        }
+        return this.health
+      }
+    }
+    console.log(adventurer.heal())
     /*
-    PROBLEM 5 (DEBUGGING): The following code is supposed to create a bankAccount object, but you receive the error: 'Uncaught ReferenceError: balance is not defined'. Fix the errors and invoke the methods to display the correct messages.
+    PROBLEM 5 (DEBUGGING): The following code is supposed to create a bankAccount object, but you receive the error: 
+    'Uncaught ReferenceError: balance is not defined'. Fix the errors and invoke the methods to display the correct messages.
 
     const bankAccount = {
       balance: 0,
@@ -81,7 +107,25 @@
     */
 
     //ENTER YOUR CODE HERE
-
+      const bankAccount = {
+      balance: 100,
+      deposit: function(amount) {
+        this.balance += amount;
+        console.log(`Deposited $${amount}.`);
+      },
+      withdraw: function(amount) {
+        this.balance -= amount;
+        console.log(`Withdrawn $${amount}.`);
+      },
+      displayBalance: function() {
+        console.log(`Balance: $${this.balance}.`);
+      }
+    };
+    console.log(bankAccount.displayBalance())
+    console.log(bankAccount.deposit(10))
+    console.log(bankAccount.displayBalance())
+    console.log(bankAccount.withdraw(50))
+    console.log(bankAccount.displayBalance())
   </script>
 
 </body>

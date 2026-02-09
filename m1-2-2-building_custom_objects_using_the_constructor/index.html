@@ -6,7 +6,10 @@
 
   <script>
     /*
-    PROBLEM 1: Create a constructor function called Person in the below class that takes in two parameters, name and age, and creates a new object with those properties. Create a new instance of Person and call the greet method. Console.log the new Person's greeting to see the results printed to the console.
+    PROBLEM 1: Create a constructor function called Person in the below class that takes in:
+     two parameters, name and age, and creates a new object with those properties. 
+     Create a new instance of Person and call the greet method. 
+     Console.log the new Person's greeting to see the results printed to the console.
 
       class Person {
         name: 'Bob';
@@ -17,27 +20,97 @@
       }
       */
     //ENTER YOUR CODE HERE
-
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      greet() {
+        console.log(`Hello, my name is ${this.name} and my age is ${this.age} years old`);
+      }
+    }
+    let wrigley = new Person('Wrigley', 14)
+    wrigley.greet()
     /*
-    PROBLEM 2: Create a constructor function called Rectangle that takes in two parameters, width and height, and creates a new object with those properties. Add methods to the Rectangle prototype called area and perimeter that return the area and perimeter of the rectangle, respectively. Create a new instance of Rectangle and log its area and perimeter to the console.
+    PROBLEM 2: Create a constructor function called Rectangle that takes in:
+     two parameters, width and height, and creates a new object with those properties. 
+     Add methods to the Rectangle prototype called area and perimeter that return the area and perimeter of the rectangle, respectively. 
+     Create a new instance of Rectangle and log its area and perimeter to the console.
     */
 
     //ENTER YOUR CODE HERE
+    class Rectangle {
+      constructor(width, height) {
+        this.width = width;
+        this.height = height;
+      }
+      area() {
+        return this.width * this.height
+      }
+      perimeter() {
+        return (this.width * 2) + (this.height * 2)
+      }
+    }
+
+    let polygon = new Rectangle(12, 18)
+    console.log("Rectable class area:", polygon.area())
+    console.log("Rectable class perimeter:", polygon.perimeter())
 
     /*
-   PROBLEM 3: Create a constructor function called Team that takes in two parameters, name and sport, and creates a new object with those properties. Add a method to the Team prototype called win that increases the team's number of wins by one. Add another method called loss that increases the team's number of losses by one. Create a new instance of Team and use the win and loss methods to manipulate the team's win and loss records.
+   PROBLEM 3: Create a constructor function called Team that takes in two parameters, name & sport, & creates a new object with those properties. 
+   Add a method to the Team prototype called win that increases the team's number of wins by one. 
+   Add another method called loss that increases the team's number of losses by one. 
+   Create a new instance of Team and use the win and loss methods to manipulate the team's win and loss records.
    */
 
     //ENTER YOUR CODE HERE
-
+    class Team {
+      constructor(name, sport) {
+        this.name = name;
+        this.sport = sport;
+        this.wins = 0;
+        this.losses = 0;
+      }
+      win() {
+        this.wins += 1;
+      }
+      loss() {
+        this.losses += 1;
+      }
+    }
+    let bulls = new Team("Chicago Bulls", "basketball")
+    console.log("Team class:", bulls)
+    bulls.win()
+    bulls.loss()
+    console.log("Team class:", bulls)
     /*
-    PROBLEM 4: Write a constructor function called Product that takes in three parameters, name, price, and description, and creates a new object with those properties. Add a method to the Product prototype called discount that takes in a percentage and reduces the price of the product by that percentage. Create a new instance of Product and use the discount method to reduce the price of the product.
+    PROBLEM 4: Write a constructor function called Product that takes in three parameters: 
+    name, price, and description, and creates a new object with those properties. 
+    Add a method to the Product prototype called discount that takes in a percentage 
+    and reduces the price of the product by that percentage. 
+    Create a new instance of Product and use the discount method to reduce the price of the product.
     */
 
     //ENTER YOUR CODE HERE
-
+    class Product{
+      constructor(name, price, description){
+        this.name = name;
+        this.price = price;
+        this.description = description;
+      }
+      discount(percentage) {
+        this.price = this.price * (1 - percentage / 100);
+      }
+    }
+    let table = new Product('table', 100, 'black')
+    console.log('Product class table:', table)
+    table.discount(30)
+    console.log('Product class table:', table)
     /*
-    PROBLEM 5 (DEBUGGING): There is a bug in the code that is causing an error when the start method is called. When myCar.start() is executed, it should output "Starting the Honda Civic...". However, the code is currently throwing an error: 'TypeError: Cannot read property 'start' of undefined'. Fix the code and create a new car object. Console.log the object to see the error message printed to the console and the results once you have fixed the code.
+    PROBLEM 5 (DEBUGGING): There is a bug in the code that is causing an error when the start method is called. 
+    When myCar.start() is executed, it should output "Starting the Honda Civic...". 
+    However, the code is currently throwing an error: 'TypeError: Cannot read property 'start' of undefined'. 
+    Fix the code and create a new car object. Console.log the object to see the error message printed to the console and the results once you have fixed the code.
 
     // Constructor function for creating a car object
     function Car(make, model, year) {
@@ -56,7 +129,18 @@
     */
 
     // ENTER YOUR CODE HERE
-
+    class Car{
+      constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+      }
+      start() {
+        console.log(`Starting the ${this.year} ${this.make} ${this.model}...`)
+      }
+    }
+    let hondaCivic = new Car("Honda", "Civic Type R", 2025)
+    hondaCivic.start()
   </script>
 
 </body>

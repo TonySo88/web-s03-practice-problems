@@ -6,7 +6,8 @@
 
   <script>
     /*
-    PROBLEM 1: Create a class from the object below. Console.log the new student class or invoked test method to see the results printed to the console.
+    PROBLEM 1: Create a class from the object below. 
+    Console.log the new student class or invoked test method to see the results printed to the console.
      let student = {
       name: 'Jessica',
       grade: 'B',
@@ -18,9 +19,22 @@
     */
 
     //ENTER YOUR CODE HERE
+    class Student {
+      constructor(name, grade, year) {
+        this.name = name;
+        this.grade = grade;
+        this.year = year;
+      }
+      test() {
+        return `${this.name} received ${this.grade} on the ${this.year} test!`
+      }
+    }
+    const jessica = new Student('Jessica', 'B', 3)
+    console.log('Student class:', jessica)
 
     /*
-    PROBLEM 2: Use the dog object to create a dog class and instantiate a new dog named 'Lucy'. Console.log the new dog to see the dog class printed to the console.
+    PROBLEM 2: Use the dog object to create a dog class and instantiate a new dog named 'Lucy'. 
+    Console.log the new dog to see the dog class printed to the console.
 
     const dog = {
       name: 'Fido',
@@ -36,6 +50,21 @@
     */
 
     //ENTER YOUR CODE HERE
+    class Dog {
+      constructor(name, breed, age) {
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
+      }
+      bark() {
+        return 'bow wow!';
+      }
+      play(toy) {
+        return `${this.name} loves playing with a ${toy}`
+      }
+    }
+    const wrigley = new Dog('Wrigley', 'Pit Bull', '14')
+    console.log('Dog class:', wrigley)
 
      /*
     PROBLEM 3: Create a phone class and instantiate a new phone named 'blueberry'. Make sure to include:
@@ -47,20 +76,54 @@
     */
 
     //ENTER YOUR CODE HERE
+    class Phone {
+      constructor(owner, model, calls) {
+        this.owner = owner;
+        this.model = model;
+        this.calls = calls; 
+      }
+      call(name) {
+        this.calls += 1;
+        return `I am making a call to ${name} from my ${this.model} phone`
+      }
+    }
+    let blueberry = new Phone('Steven', 'XM50', 9)
+    console.log('Phone class:', blueberry)
 
     /*
     PROBLEM 4: Create a video game class and instantiate a new game named 'bionix'. Make sure to include:
       •An genre property that has a value of 'Multiplayer RPG'
       •A rating property that has a value of 4.5
       •A players property that has a value of 2, but cannot be higher than 10
-      •A method named play that adds a number of players to the players property and returns 'There are (number) of players joining the game, bringing the total number of players to (players)'
+      •A method named play that adds a number of players to the players property and returns 
+      'There are (number) of players joining the game, bringing the total number of players to (players)'
     Console.log the new video game instance to see the class printed to the console.
     */
 
     //ENTER YOUR CODE HERE
-
+    class VideoGame {
+      constructor(genre, ratings, players) {
+      this.genre = genre;
+      this.ratings = ratings;
+      this.players = players;
+      }
+      play(number) {
+        if (this.players + number > 10) {
+          this.players = 10
+        } else {
+          this.players += number
+        }
+        return `There are ${number} of players joining the game, bringing the total number of players to ${this.players}`
+      }
+    }
+    let bionix = new VideoGame('horror', 10, 3)
+    console.log(bionix.play(1))
+    console.log(bionix)
     /*
-    PROBLEM 5 (DEBUGGING): The following code defines a Book class. However, there is an "Uncaught SyntaxError: Unexpected identifier 'book' " error in the code that prevents it from running properly. Fix the code and create a new Book instance named 'magic'. Console.log the title and read method to the console to see the results printed to the console.
+    PROBLEM 5 (DEBUGGING): The following code defines a Book class. However, there is an "Uncaught SyntaxError: 
+    Unexpected identifier 'book' " error in the code that prevents it from running properly. 
+    Fix the code and create a new Book instance named 'magic'. 
+    Console.log the title and read method to the console to see the results printed to the console.
 
     Class book = {
       title: 'The magical Island';
@@ -72,6 +135,19 @@
       }
     }
     */
+    class Book {
+      constructor(title, author, genre, pages) {
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.pages = pages;
+      }
+      read(number) {
+        return `read ${number} out of ${this.pages}`
+      }
+    }
+    let magic = new Book('Magic', 'Wrigley Fall', 'Dog Fiction', 873)
+    console.log("Book class:", magic.read(466))
 
   </script>
 
