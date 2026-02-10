@@ -6,28 +6,83 @@
 
   <script>
     /*
-    PROBLEM 1: Write a function "deliverMessage" that accepts a string as an argument from the first parameter "message". The function should print the message to the console. If an argument is not passed into the function, the parameter should default to "hello"
+    PROBLEM 1: Write a function "deliverMessage" that accepts a string as an argument from the first parameter "message". 
+    The function should print the message to the console. 
+    If an argument is not passed into the function, the parameter should default to "hello"
     */
     //ENTER YOUR CODE HERE
-
+    // const deliverMessage = (message ='hello') => console.log('deliverMessage:', `${message}`)
+    // const deliverMessage = (message = 'hello') => {
+    //   console.log('deliverMessage: ', `${message}`)
+    // }
+    // const deliverMessage = function(message = 'hello') {
+    //   console.log('deliverMessage: ', `${message}`)
+    // }
+    function deliverMessage(message = 'hello') {
+      console.log('deliverMessage: ', `${message}`)
+    }
+    deliverMessage()
+    deliverMessage("KELLY CLARKSON")
     /*
-    PROBLEM 2: Create a function "multiply" that receives two numbers as arguments and returns their product. Set default values of 1 for both arguments.
+    PROBLEM 2: Create a function "multiply" that receives two numbers as arguments and returns their product. 
+    Set default values of 1 for both arguments.
     */
     //ENTER YOUR CODE HERE
-
+    // const multiply = (arg1 = 1, arg2 = 1) => arg1 * arg2;
+    // const multiply = (arg1 = 1, arg2 = 1) => {
+    //   return arg1 * arg2
+    // }
+    // const multiply = function(arg1 = 1, arg2 = 1) {
+    //   return arg1 * arg2
+    // }
+    function multiply(arg1 = 1, arg2 = 1) {
+      return arg1 * arg2
+    }
+    console.log('multiply:', multiply())
+    console.log('multiply:', multiply(5, 10))
     /*
-    PROBLEM 3: Write a function "append" that receives two arguments, a string from the FIRST parameter and an array from the SECOND parameter. The function should return the passed array with the string added to it.
+    PROBLEM 3: Write a function "append" that receives two arguments, 
+    a string from the FIRST parameter and an array from the SECOND parameter. 
+    The function should return the passed array with the string added to it.
     Set an empty array as the default for the second parameter.
     */
     //ENTER YOUR CODE HERE
-
+    // cannot be inline due push methods action IN ADDITION to it's return value
+    // the result of the push operation is the new length of the array
+    // push has it's own return, so we need to explicitly return arr
+    // const append = (str, arr = []) => {
+    //   arr.push(str)
+    //   return arr
+    // }
+    // const append = function (str, arr = []) {
+    //   arr.push(str);
+    //   return arr;
+    // }
+    function append(str, arr = []) {
+      arr.push(str)
+      return arr
+    }
+    console.log('append:', append('hello'))
     /*
-    PROBLEM 4: Create a function "greet" that accepts two arguments, a name from the FIRST parameter and a greeting from the SECOND. greet() should return a personalised message `hello` + name if no greeting argument is provided.
+    PROBLEM 4: Create a function "greet" that accepts two arguments, 
+    a name from the FIRST parameter and a greeting from the SECOND. 
+    greet() should return a personalised message `hello` + name if no greeting argument is provided.
     e.g greet('Ted', 'Good morning!') // Good morning!
     greet('Ted')  // hello Ted
     */
     //ENTER YOUR CODE HERE
-
+    // const greet = (name, greeting = 'Hello') => `${greeting} ${name}`
+    // const greet = (name, greeting = 'Hello') => {
+    //   return `${greeting} ${name}`
+    // }
+    // const greet = function(name, greeting = 'Hello') {
+    //   return `${greeting} ${name}`
+    // }
+    function greet(name, greeting = 'Hello') {
+      return `${greeting} ${name}`
+    }
+    console.log('greet:', greet('Wrigley'))
+    console.log('greet:', greet('Wrigley', 'Do you want to go outside'))
     /*
     PROBLEM 5 (DEBUGGING): Fix the issue(s) with the function "toArray" so it always returns an array of two items.
     Note: `toArray` must always be called with at least one argument
@@ -37,6 +92,12 @@
     // }
     //
     // toArray(2);
+
+    function toArray(x = 1, y = 1) {
+      return [ x, y ];
+    }
+    
+    console.log(toArray(2));
 
   </script>
 

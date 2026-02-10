@@ -36,7 +36,7 @@
     // const tagRace = (...args) => {
     //   return args[args.length - 1]
     // }
-    // const tagRace = function (...args) {
+    // const tagRace = function(...args) {
     //   return args[args.length - 1]
     // }
     function tagRace(...args) {
@@ -70,20 +70,10 @@
     */
     //ENTER YOUR CODE HERE
     // const prefixer = (str, ...args) => args.map(arg => `${str}${arg}`)
-    // const prefixer = (str, ...args) => {
-    //   return args.map(arg => {
-    //     return `${str}${arg}`
-    //   }) 
-    // }
-    // const prefixer = function (str, ...args) {
-    //   return args.map(function (arg) {
-    //     return `${str}${arg}`
-    //   })
-    // }
-    function prefixer(str, ...args) {
-      return args.map(function (arg) {
+    const prefixer = (str, ...args) => {
+      return args.map(arg => {
         return `${str}${arg}`
-      }) 
+      })
     }
     console.log(prefixer('un', 'opposed', 'ashamed', 'forgiven'))
     /*
