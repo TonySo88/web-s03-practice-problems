@@ -7,29 +7,62 @@
   <script>
     const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     /*
-    PROBLEM 1: Create a new array of even numbers using the .filter array method with the numbers array and log the results to the console.
+    PROBLEM 1: Create a new array of even numbers using the .filter array method with the numbers array and 
+    log the results to the console.
     */
     //ENTER YOUR CODE HERE
-
+    const filteredNumbers = numbers.filter(number => number % 2 === 0);
+    // const filteredNumbers = numbers.filter(number => {
+    //   return number % 2 === 0;
+    // })
+    // const filteredNumbers = numbers.filter(function(number) {
+    //   return number % 2 === 0
+    // })
+    console.log('filteredNumbers: ', filteredNumbers)
     /*
-    PROBLEM 2: Create a new array of odd numbers using the .filter array method with the numbers array and log the results to the console.
+    PROBLEM 2: Create a new array of odd numbers using the .filter array method with the numbers array and 
+    log the results to the console.
     */
     //ENTER YOUR CODE HERE
-
+    // const newArray = numbers.filter(number => number % 2 !== 0);
+    // const newArray = numbers.filter(number => {
+    //   return number % 2 !== 0
+    // })
+    const newArray = numbers.filter(function(number) {
+      return number % 2 !== 0;
+    })
+    console.log('newArray: ', newArray)
     /*
-   PROBLEM 3: Create a new array of strings using the .filter array method with the strings array that have a length less than 6 and log the results to the console.
+   PROBLEM 3: Create a new array of strings using the .filter array method 
+   with the strings array that have a length less than 6 and log the results to the console.
    */
     const strings = ['hello', 'world', 'javascript', 'coding'];
     //ENTER YOUR CODE HERE
-
+    // const newStrings = strings.filter(string => string.length < 6)
+    // const newStrings = strings.filter(string => {
+    //   return string.length < 6;
+    // })
+    const newStrings = strings.filter(function(string) {
+      return string.length < 6;
+    })
+    console.log('newStrings: ', newStrings)
     /*
-    PROBLEM 4: Create a new array of numbers that are larger than 100 using the .filter array method with the largeNumbers array and log the results to the console.
+    PROBLEM 4: Create a new array of numbers that are larger than 100 using the .filter array method with the largeNumbers array 
+    and log the results to the console.
     */
     const largeNumbers = [11, 55, 1001, 356, 97, 88, 244, 975, 42];
     //ENTER YOUR CODE HERE
-
+    // const largerNumbers = largeNumbers.filter(number => number > 100);
+    // const largerNumbers = largeNumbers.filter(number => {
+    //   return number > 100;
+    // })
+    const largerNumbers = largeNumbers.filter(function(number) {
+      return number > 100;
+    })
+    console.log('largerNumbers: ', largerNumbers)
     /*
-    PROBLEM 5 (DEBUGGING): The following commented code is supposed to filter out the even numbers but it returns a new array of even numbers. Uncomment and fix the bug. Check the results in the console.
+    PROBLEM 5 (DEBUGGING): The following commented code is supposed to filter out the even numbers but 
+    it returns a new array of even numbers. Uncomment and fix the bug. Check the results in the console.
     */
     // const debuggingNumbers = [1, 2, 3, 4, 5];
 
@@ -40,6 +73,16 @@
     // });
 
     // console.log(evenDebuggedNumbers);
+
+    const debuggingNumbers = [1, 2, 3, 4, 5];
+
+    const evenDebuggedNumbers = debuggingNumbers.filter(number => {
+      if (number % 2 !== 0) {
+        return true;
+      }
+    });
+
+    console.log(evenDebuggedNumbers);
 
   </script>
 

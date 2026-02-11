@@ -58,7 +58,8 @@
     })
     console.log("numbersToSum,", sum);
     /*
-    PROBLEM 5 (DEBUGGING): The following commented code is supposed to print out the first three elements of an array, but it's not working. Uncomment the code and fix the issue. Check your results in the console.
+    PROBLEM 5 (DEBUGGING): The following commented code is supposed to print out the first three elements of an array, 
+    but it's not working. Uncomment the code and fix the issue. Check your results in the console.
     */
 
     // const debuggingNumbers = [1,2,3,4,5];
@@ -67,6 +68,13 @@
     //     console.log(num)
     //   }
     // })
+
+    const debuggingNumbers = [1,2,3,4,5];
+    debuggingNumbers.forEach((num, index) => {
+      if(index < 3) {
+        console.log(num)
+      }
+    })
 
   </script>
 
