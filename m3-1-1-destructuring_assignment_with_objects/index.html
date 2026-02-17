@@ -16,9 +16,9 @@
     };
     //ENTER YOUR CODE HERE
     const { name, age, city } = person
-    console.log(name)
-    console.log(age)
-    console.log(city)
+    console.log("name:", name)
+    console.log("age:", age)
+    console.log("city:", city)
     /*
     PROBLEM 2: Given the object student below, extract properties from the object and assign them to variables.
     Use destructuring assignment to extract the id, firstName, and lastName properties into their own variables.
@@ -29,10 +29,10 @@
       lastName: 'Doe'
     };
     //ENTER YOUR CODE HERE
-    const {id, firstName, lastName } = student;
-    console.log(id);
-    console.log(firstName);
-    console.log(lastName);
+    const { id, firstName, lastName } = student
+    console.log("id:", id)
+    console.log("firstName:", firstName)
+    console.log("lastName:", lastName)
     /*
    PROBLEM 3: Given the object car below, extract properties from the object and assign them to variables.
    Use destructuring assignment to extract the brand and model properties into their own variables.
@@ -43,8 +43,8 @@
     };
     //ENTER YOUR CODE HERE
     const { brand, model } = car
-    console.log(brand)
-    console.log(model)
+    console.log("brand:", brand)
+    console.log("model:", model)
     /*
     PROBLEM 4: Given the object movie below, extract properties from the object and assign them to variables.
     Use destructuring assignment to extract the following properties into their own variables:
@@ -69,13 +69,20 @@
       },
     };
     //ENTER YOUR CODE HERE
-    const { title: movieTitle } = movie
-    console.log(movieTitle)
-    const { director: movieDirector } = movie
-    console.log(movieDirector)
-    const { releaseYear: movieReleaseYear } = movie
-    console.log(movieReleaseYear);
-    
+    const {
+      title: movieTitle,
+      director: movieDirector,
+      releaseYear: movieReleaseYear,
+      first_actor: {
+        name: leadActor,
+        character: leadCharacter
+      }
+    } = movie
+    console.log("movieTitle:", movieTitle)
+    console.log("movieDirector:", movieDirector)
+    console.log("movieReleaseYear:", movieReleaseYear);
+    console.log("leadActor:", leadActor)
+    console.log("leadCharacter:", leadCharacter)
     /*
     PROBLEM 5 (DEBUGGING): The code below should extract the city, state, and title properties from the object
     and assign them to variables. However, there is a bug in the code.  Fix the bug so that the code works as intended.
@@ -99,6 +106,12 @@
     const state = data.location.state;
     const title = data.title;
     */
+    const { company } = data.job
+    const { state } = data.user.location
+    const { title } = data.job
+    console.log("company:", company)
+    console.log("title:", title)
+    console.log("state:", state)
   </script>
 
 </body>
